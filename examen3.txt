@@ -1,0 +1,219 @@
+create table tabla1 (
+id_u number (10),
+nombre nvarchar2 (50),
+precio nvarchar2 (15),
+Num_tipo number (25),
+Num_mar number (25)
+);
+
+
+
+create table tabla2 (
+id_d number (20),
+tipo nvarchar2 (50)
+);
+
+
+create table tabla3 (
+id_t number (20),
+marca nvarchar2 (50)
+);
+
+drop table tabla1;
+drop table tabla2;
+drop table tabla3;
+
+select *from tabla1;
+select *from tabla2;
+select *from tabla3;
+
+--Insertamos  datos en la tabla 1--
+
+insert into tabla1 values(1,'Emperador',20,1,1);
+insert into tabla1 values(2,'Principe',20,1,13);
+insert into tabla1 values(3,'Sponch',20,1,13);
+insert into tabla1 values(4,'Chokis',20,1,1);
+insert into tabla1 values(5,'Barritas',20,1,13);
+insert into tabla1 values(6,'Oreo',20,1,14);
+insert into tabla1 values(7,'Pica Fresa',2,2,2);
+insert into tabla1 values(8,'Rellerindos',5,2,2);
+insert into tabla1 values(9,'Mango',5,2,2);
+insert into tabla1 values(10,'Bomba Negra',5,2,2);
+insert into tabla1 values(11,'Pinta Azul',5,2,2);
+insert into tabla1 values(12,'Trabalenguas',5,2,2);
+insert into tabla1 values(13,'Elotes',5,2,2);
+insert into tabla1 values(14,'Cupido',5,2,2);
+insert into tabla1 values(15,'Manita',5,2,2);
+insert into tabla1 values(16,'Brocha',5,2,2);
+insert into tabla1 values(17,'Dulcigomas',15,3,15);
+insert into tabla1 values(18,'Panditas',15,3,15);
+insert into tabla1 values(19,'Dientes',15,3,15);
+insert into tabla1 values(20,'Gomita Pinguinos',15,3,15);
+insert into tabla1 values(21,'Moritas',15,3,15);
+insert into tabla1 values(22,'Gomilocas',15,3,15);
+insert into tabla1 values(23,'Coca-Cola',20,4,3);
+insert into tabla1 values(24,'Jarrito',18,4,16);
+insert into tabla1 values(25,'Red Cola',18,4,16);
+insert into tabla1 values(26,'Jamaica',25,5,4);
+insert into tabla1 values(27,'Bonafont',20,5,11);
+insert into tabla1 values(28,'Limon',25,5,4);
+insert into tabla1 values(29,'Horchata',25,5,4);
+insert into tabla1 values(30,'Frutas',25,5,4);
+insert into tabla1 values(31,'Levite',20,5,11);
+insert into tabla1 values(32,'Nectar De Manzana',18,6,17);
+insert into tabla1 values(33,'Nectar De Mango',18,6,17);
+insert into tabla1 values(34,'Arizona',25,6,17);
+insert into tabla1 values(35,'Boing De Mango',18,6,12);
+insert into tabla1 values(36,'Boing De Manzana',18,6,12);
+insert into tabla1 values(37,'Boing De Guayaba',18,6,12);
+insert into tabla1 values(38,'Del Valle',20,6,3);
+insert into tabla1 values(39,'Torta De Jamon',30,7,4);
+insert into tabla1 values(40,'Torta De Salchicha',30,7,4);
+insert into tabla1 values(41,'Burritos',30,7,4);
+insert into tabla1 values(42,'Chilaquiles',30,7,4);
+insert into tabla1 values(43,'Panbazos',30,7,4);
+insert into tabla1 values(44,'Tacos',30,7,4);
+insert into tabla1 values(45,'Gorditas',25,7,4);
+insert into tabla1 values(46,'Quesadillas',25,7,4);
+insert into tabla1 values(47,'Takis',18,8,8);
+insert into tabla1 values(48,'Chips',18,8,8);
+insert into tabla1 values(49,'Sabritas Naturales',18,8,7);
+insert into tabla1 values(50,'Cheetos',15,8,7);
+insert into tabla1 values(51,'Paketaxo',20,8,7);
+insert into tabla1 values(52,'Runners',18,8,8);
+insert into tabla1 values(53,'Papas',20,8,4);
+insert into tabla1 values(54,'Mordisko',16,9,6);
+insert into tabla1 values(55,'Solero',15,9,6);
+insert into tabla1 values(56,'Cornetto',25,9,6);
+insert into tabla1 values(57,'Pintalengua',15,9,6);
+insert into tabla1 values(58,'Mini Choc',15,9,6);
+insert into tabla1 values(59,'Carlosv',15,9,6);
+insert into tabla1 values(60,'Choco Krispis',20,10,4);
+insert into tabla1 values(61,'Nesquik',20,10,4);
+insert into tabla1 values(62,'Froot Loops',20,10,4);
+insert into tabla1 values(63,'Zucaritas',20,10,4);
+insert into tabla1 values(64,'MandM',20,11,18);
+insert into tabla1 values(65,'Snickers',25,11,18);
+insert into tabla1 values(66,'Milkyway',25,11,18);
+insert into tabla1 values(67,'Ranita',5,11,9);
+insert into tabla1 values(68,'Hersheys',20,11,10);
+insert into tabla1 values(69,'Mazapan',5,11,9);
+insert into tabla1 values(70,'Larin',15,11,5);
+insert into tabla1 values(71,'Nugs',8,11,9);
+insert into tabla1 values(72,'Crunch',20,11,5);
+insert into tabla1 values(73,'Carlosv',15,11,5);
+insert into tabla1 values(74,'Dona',15,12,4);
+insert into tabla1 values(75,'Pinguinos',20,12,13);
+
+--Insertamos  datos en la tabla 2 con un trigger--
+
+create sequence secu
+start with 1
+increment by 1 
+maxvalue 20
+minvalue 1;
+
+insert into tabla2 values (secu.nextval,'Galletas');
+insert into tabla2 values (secu.nextval,'Paletas');
+insert into tabla2 values (secu.nextval,'Gomitas');
+insert into tabla2 values (secu.nextval,'Refrescos');
+insert into tabla2 values (secu.nextval,'Aguas');
+insert into tabla2 values (secu.nextval,'Jugos');
+insert into tabla2 values (secu.nextval,'Comida');
+insert into tabla2 values (secu.nextval,'Frituras');
+insert into tabla2 values (secu.nextval,'Helados');
+insert into tabla2 values (secu.nextval,'Cereal Con Leche');
+insert into tabla2 values (secu.nextval,'Chocolates');
+insert into tabla2 values (secu.nextval,'Pan');
+insert into tabla2 values (secu.nextval,'Alcohol');
+insert into tabla2 values (secu.nextval,'Ropa');
+insert into tabla2 values (secu.nextval,'Limpieza');
+insert into tabla2 values (secu.nextval,'Maquillaje');
+insert into tabla2 values (secu.nextval,'Mota');
+
+
+create or replace trigger t_secuencia
+before insert 
+on tabla2
+for each row
+begin 
+    insert into tabla2 values (secu.nextval,'Alcohol');
+end t_secuencia;
+
+END;
+
+
+drop trigger tr_secuencia;
+
+--Insertamos  datos en la tabla 3 --
+insert into tabla3 values(1,'Gamesa');
+insert into tabla3 values(2,'Vero');
+insert into tabla3 values(3,'Coca-Cola');
+insert into tabla3 values(4,'Tesoem');
+insert into tabla3 values(5,'Nestle');
+insert into tabla3 values(6,'Holanda');
+insert into tabla3 values(7,'Sabritas');
+insert into tabla3 values(8,'Barcel');
+insert into tabla3 values(9,'La Rosa');
+insert into tabla3 values(10,'Hershey´S');
+insert into tabla3 values(11,'Bonafont');
+insert into tabla3 values(12,'Boing');
+insert into tabla3 values(13,'Marinela');
+insert into tabla3 values(14,'Nabisco');
+insert into tabla3 values(15,'Ricolino');
+insert into tabla3 values(16,'Jarrito');
+insert into tabla3 values(17,'Jumex');
+insert into tabla3 values(18,'Mars Wrigley');
+insert into tabla3 values(19,'Calvin Klein');
+insert into tabla3 values(20,'Shefora');
+insert into tabla3 values(21,'Converse');
+insert into tabla3 values(22,'Taf');
+insert into tabla3 values(23,'Prosa');
+
+--Full join uniendo las 3 tablas --
+select tabla1.nombre, tabla1.precio, tabla2.tipo, tabla3.marca from tabla2 full join tabla1  ON tabla2.id_d = tabla1.Num_tipo full join tabla3 ON tabla3.id_t = tabla1.Num_mar;
+
+--Inner join uniendo tabla1 y tabla3 donde solo muestre los productos que son de parte de "Tesoem" --
+select *from tabla1 inner join tabla3 on Num_mar=id_t where marca='Tesoem';
+
+--Left join sin relación de la tabla1 y tabla2 --
+select *from tabla1 left join tabla2 on nombre = tipo;
+
+--Right join con relación de la tabla1 y tabla3 --
+select *from tabla1 right join tabla3 on Num_mar=id_t ;  
+
+--Full join sin relación de las 3 tablas --
+select *from tabla1 full join tabla2 on Num_tipo=id_d full join tabla3 on Num_mar=id_t where Num_tipo is null;
+
+--Join de las 3 tablas donde muestre los productos que empiecen con la letra T --
+select *from tabla1 full join tabla2 on Num_tipo=id_d full join tabla3 on Num_mar=id_t  where nombre like 'T%'  ; 
+
+--Inserto en mi tabla 1 un producto que empiece con la letra ‘T’ imprima en mi tabla extra el texto de ‘Se inserto un producto con la vitamina T’ --
+create table extra (
+id_e number (5),
+nuevo nvarchar2 (60)
+);
+drop table extra;
+
+create or replace trigger tr_t
+after insert
+on tabla1 
+for each row
+when (new.nombre like 'T%') 
+begin
+insert into extra values (1,'Se inserto un producto con la vitamina T ,'|| :new.nombre);
+end tr_t;
+
+insert into tabla1 values(76,'Torta suadero',30,7,4);
+insert into tabla1 values(77,'Tacos de suadero',30,7,4);
+
+select *from tabla1;
+select *from extra;
+
+--Vista que muestre el id_u, nombre,precio, Num_marca en el cual sol mostrara productos con precio mayores de 15 pero menor o igual a 25--
+create or replace view pro
+as
+select id_u,nombre,precio, Num_mar
+from tabla1 where precio>15 and precio<=25 ;
+
+select * from pro;
